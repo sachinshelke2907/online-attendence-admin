@@ -1,0 +1,48 @@
+<form class="form-employee" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+    <p class="card-description"> Personal Info</p>
+
+    <div class="row">
+
+        <div class="wrap-6 pad-right">
+
+            <div class="form-group row">
+                <label class="wrap-3 col-form-label">Department Name</label>
+                <div class="wrap-9">
+                    <input type="text" formControlName="name" class="form-control" />
+                    <div
+                        *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)">
+                        <span class="error-span" *ngIf="form.controls['name'].errors.required">
+                            Department name is required.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap-6 pad-left">
+            <div class="form-group row">
+                <label class="wrap-3 col-form-label">Main Department</label>
+                <div class="wrap-9">
+                    <select formControlName="mainDepartment" class="form-control">
+                        <option value="" selected>Select Main Department</option>
+                        <option *ngFor="let mainDepartment of mainDepartmentList" [value]="mainDepartment.key">{{ mainDepartment.value
+                            }}</option>
+                    </select>
+                    <div
+                        *ngIf="form.controls['mainDepartment'].invalid && (form.controls['mainDepartment'].dirty || form.controls['mainDepartment'].touched)">
+                        <span class="error-span" *ngIf="form.controls['mainDepartment'].errors.required">
+                            Main department is required.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+        <button type="submit" [disabled]="form.pristine || form.invalid" class="btn btn-success mr-2">Submit</button>
+        <button type="button" (click)="form.reset()" class="btn btn-light">Cancel</button>
+    </div>
+</form>

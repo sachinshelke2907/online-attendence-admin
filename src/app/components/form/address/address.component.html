@@ -1,0 +1,92 @@
+<ng-container [formGroup]="addressForm">
+
+    <div class="row">
+        <div class="wrap-6 pad-right">
+            <div class="form-group row">
+                <label class="wrap-3 col-form-label">Address 1</label>
+                <div class="wrap-9">
+                    <input type="text" formControlName="address1" class="form-control" />
+                    <div
+                        *ngIf="addressForm.controls['address1'].invalid && (addressForm.controls['address1'].dirty || addressForm.controls['address1'].touched)">
+                        <span class="error-span" *ngIf="addressForm.controls['address1'].errors.required">
+                            Address1 is required.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-6 pad-left">
+            <div class="form-group row">
+                <label class="wrap-3 col-form-label">State</label>
+                <div class="wrap-9">
+                    <input type="text" formControlName="state" class="form-control" />
+                    <div
+                        *ngIf="addressForm.controls['state'].invalid && (addressForm.controls['state'].dirty || addressForm.controls['state'].touched)">
+                        <span class="error-span" *ngIf="addressForm.controls['state'].errors.required">
+                            State is required.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="wrap-6 pad-right">
+            <div class="form-group row">
+                <label class="wrap-3 col-form-label">Address 2</label>
+                <div class="wrap-9">
+                    <input type="text" formControlName="address2" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="wrap-6 pad-left">
+            <div class="form-group row">
+                <label class="wrap-3 col-form-label">Postcode</label>
+                <div class="wrap-9">
+                    <input type="text" formControlName="pincode" class="form-control" />
+                    <div
+                        *ngIf="addressForm.controls['pincode'].invalid && (addressForm.controls['pincode'].dirty || addressForm.controls['pincode'].touched)">
+                        <span class="error-span" *ngIf="addressForm.controls['pincode'].errors.required">
+                            Postcode is required.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="wrap-6 pad-right">
+            <div class="form-group row">
+                <label class="wrap-3 col-form-label">City</label>
+                <div class="wrap-9">
+                    <input type="text" formControlName="city" class="form-control" />
+                    <div
+                        *ngIf="addressForm.controls['city'].invalid && (addressForm.controls['city'].dirty || addressForm.controls['city'].touched)">
+                        <span class="error-span" *ngIf="addressForm.controls['city'].errors.required">
+                            City is required.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-6 pad-left">
+            <div class="form-group row">
+                <label class="wrap-3 col-form-label">Country</label>
+                <div class="wrap-9">
+                    <select formControlName="country" class="form-control">
+                        <option value="">Select Country</option>
+                        <option *ngFor="let country of countryList" [value]="country.key">{{ country.value }}</option>
+                    </select>
+                    <div
+                        *ngIf="addressForm.controls['country'].invalid && (addressForm.controls['country'].dirty || addressForm.controls['country'].touched)">
+                        <span class="error-span" *ngIf="addressForm.controls['country'].errors.required">
+                            Country is required.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

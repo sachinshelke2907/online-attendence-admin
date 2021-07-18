@@ -1,0 +1,29 @@
+<aside class="app-sidebar sidebar-dark-primary width-100p sidebar-shadow">
+    <div class="vertical-align-middle brand-container brand-bottom-border">
+        <a href="#">
+            <span class="vertical-align-middle app-title brand-icon">OA</span>
+            <span class="vertical-align-middle app-title brand-title-color">Online Attendence</span>
+        </a>
+    </div>
+    <div class="brand-container brand-bottom-border">
+        <img class="user-image elevation-2 mr-2 img-circle vertical-align-middle" src="./assets/image/user.jpg">
+        <span class="vertical-align-middle brand-title-color">Online Attendence</span>
+    </div>
+    <div class="app-sidenav">
+        <ul>
+            <li *ngFor="let menu of menuList">
+                <a [href]="menu.href" (click)="onClick(menu.href, $event)">
+                    <i class="fa {{ menu.icon }} sidebar-icon" aria-hidden="true"></i> {{ menu.name }}
+                </a>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <ul *ngIf="menu.subMenus" style="display: none;">
+                    <li *ngFor="let submenu of menu.subMenus">
+                        <a [href]="submenu.href">
+                            {{ submenu.name }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</aside>

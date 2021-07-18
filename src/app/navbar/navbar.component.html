@@ -1,0 +1,39 @@
+<div class="topnav app-topnav" [ngClass]="[!isOpenSide ? 'width-minus-250 ml-250' : 'width-100p']" id="nav">
+    <div class="row">
+        <div class="wrap-8">
+            <ul>
+                <li>
+                    <a href="javascript: void(0);" (click)="onNavClick()">
+                        <i class="fa" [ngClass]="[!isOpenSide ? 'fa-times' : 'fa-bars']" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="icon">
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="wrap-4 wrap-align-left">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <span class="count background-green">2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-bell-o" aria-hidden="true"></i>
+                        <span class="count background-red">1</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="app-user-image">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

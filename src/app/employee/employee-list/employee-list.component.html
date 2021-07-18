@@ -1,0 +1,46 @@
+<table class="table">
+    <thead>
+        <th>
+            #
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Designation
+        </th>
+        <th>
+            Personal Email
+        </th>
+        <th>
+            Official Email
+        </th>
+        <th>
+            Mobile No
+        </th>
+        <th>
+            Action
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employeeList; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ getFullName(employee) }}</td>
+            <td>{{ employee.pemail }}</td>
+            <td>{{ employee.pemail }}</td>
+            <td>{{ employee.pemail }}</td>
+            <td>{{ employee.pemail }}</td>
+            <td>
+                <a class="mr-5 cr-success" title="Edit">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </a>
+                <a class="mr-5" title="view">
+                    <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                </a>
+                <a class="mr-5 cr-danger" title="view">
+                    <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
