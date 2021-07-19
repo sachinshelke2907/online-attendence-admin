@@ -1,7 +1,7 @@
 export const route: any = [
     {
         name: 'Dashboard',
-        href: '#',
+        href: '',
         icon: 'fa-tachometer',
         key: 'dashboard',
         subMenus: [],
@@ -40,7 +40,7 @@ export const route: any = [
     },
     {
         name: 'Attendance',
-        href: '#',
+        href: '',
         icon: 'fa-calendar-check-o',
         key: 'attendance',
         subMenus: [],

@@ -11,24 +11,29 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddressComponent } from './components/form/address/address.component';
 import { CreateEditDepartmentComponent } from './department/create-edit-department/create-edit-department.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { DepartmentListComponent } from './department/department-list/department-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    SidebarComponent,
-    CreateEditEmployeeComponent,
-    EmployeeListComponent,
-    AddressComponent,
-    CreateEditDepartmentComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        SidebarComponent,
+        CreateEditEmployeeComponent,
+        EmployeeListComponent,
+        AddressComponent,
+        CreateEditDepartmentComponent,
+        DepartmentListComponent,
+        DashboardComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule
+    ],
+    providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
