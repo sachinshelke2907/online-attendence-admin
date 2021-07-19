@@ -2,13 +2,15 @@ export const route: any = [
     {
         name: 'Dashboard',
         href: '#',
-        icon: 'fa-th',
+        icon: 'fa-tachometer',
+        key: 'dashboard',
         subMenus: [],
     },
     {
         name: 'Employee',
         href: '#',
         icon: 'fa-user-circle',
+        key: 'employee',
         subMenus: [
             {
                 name: 'List',
@@ -24,6 +26,7 @@ export const route: any = [
         name: 'Department',
         href: '#',
         icon: 'fa-graduation-cap',
+        key: 'department',
         subMenus: [
             {
                 name: 'List',
@@ -36,9 +39,11 @@ export const route: any = [
         ],
     },
     {
-        name: 'Attendence',
+        name: 'Attendance',
         href: '#',
         icon: 'fa-calendar-check-o',
+        key: 'attendance',
         subMenus: [],
-    }
+    },
+    
 ];

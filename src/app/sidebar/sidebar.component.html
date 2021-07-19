@@ -9,16 +9,19 @@
         <img class="user-image elevation-2 mr-2 img-circle vertical-align-middle" src="./assets/image/user.jpg">
         <span class="vertical-align-middle brand-title-color">Online Attendence</span>
     </div>
-    <div class="app-sidenav">
-        <ul>
+    <div class="section-sidemenu">
+        <ul class="sidebar-ul">
             <li *ngFor="let menu of menuList">
-                <a [href]="menu.href" (click)="onClick(menu.href, $event)">
-                    <i class="fa {{ menu.icon }} sidebar-icon" aria-hidden="true"></i> {{ menu.name }}
+                <a class="side-item brand-container" [ngClass]="( onClicked && key == menu.key ) ? 'active' : ''" [href]="menu.href" (click)="onClick(menu.href, menu.key, $event)">
+                    <i class="fa {{ menu.icon }} sidebar-icon" aria-hidden="true"></i>
+                    <span>{{ menu.name }}
+                        <i *ngIf="menu.subMenus?.length" class="fa" [ngClass]="( onClicked && key == menu.key ) ? 'fa-chevron-down' : 'fa-chevron-left'" aria-hidden="true"></i>
+                    </span>
                 </a>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                <ul *ngIf="menu.subMenus" style="display: none;">
+                <ul *ngIf="menu.subMenus" class="sidebar-ul-submenu" [ngClass]="( onClicked && key == menu.key ) ? 'sidebar-ul-submenu-on-open' : 'sidebar-ul-submenu-on-closed'">
                     <li *ngFor="let submenu of menu.subMenus">
-                        <a [href]="submenu.href">
+                        <a [href]="submenu.href" [ngClass]="isActive(submenu.name, 'sub') ? 'active' : '' " (click)="onClickSubMenu(menu.name, $event)" class="side-sub-item brand-container">
+                            <i class="fa fa-circle-o sidebar-icon" aria-hidden="true"></i>
                             {{ submenu.name }}
                         </a>
                     </li>
