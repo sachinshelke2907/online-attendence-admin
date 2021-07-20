@@ -75,7 +75,7 @@
             <div class="form-group row">
                 <label class="wrap-3 col-form-label">Date of Birth</label>
                 <div class="wrap-9">
-                    <input type="date" class="form-control" formControlName="dob" placeholder="dd/mm/yyyy" />
+                    <input type="text" class="form-control" formControlName="dob" placeholder="dd/mm/yyyy" ngxDaterangepickerMd [showCancel]="true" [singleDatePicker]="true" (change)="change($event)" />
                     <div
                         *ngIf="form.controls['dob'].invalid && (form.controls['dob'].dirty || form.controls['dob'].touched)">
                         <span class="error-span" *ngIf="form.controls['dob'].errors.required">
