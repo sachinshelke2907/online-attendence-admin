@@ -5753,6 +5753,14 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
+ngx-daterangepicker-material@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-daterangepicker-material/-/ngx-daterangepicker-material-5.0.1.tgz#57403e605b4c317e6f694e3b289732945fcd7e97"
+  integrity sha512-vbxsiRqyBgXExRBPxuCodLlOOsVEZJ20nTPZks/7z943gZcb2XKwRuQ9hi43MG0xl7RVzDKZdsNKU8bzB86g7g==
+  dependencies:
+    dayjs "^1.10.4"
+    tslib "^2.0.0"
+
 ngx-webstorage-service@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/ngx-webstorage-service/-/ngx-webstorage-service-4.1.0.tgz#c3511ea8ad1c256a672f703ec472e05a57e7c056"
