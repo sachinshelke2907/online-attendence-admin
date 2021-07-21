@@ -12,28 +12,36 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddressComponent } from './components/form/address/address.component';
 import { CreateEditDepartmentComponent } from './department/create-edit-department/create-edit-department.component';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    SidebarComponent,
-    CreateEditEmployeeComponent,
-    EmployeeListComponent,
-    AddressComponent,
-    CreateEditDepartmentComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    NgxDaterangepickerMd.forRoot({
-        applyLabel: 'Okay',
-        cancelLabel: 'Cancel'
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        SidebarComponent,
+        CreateEditEmployeeComponent,
+        EmployeeListComponent,
+        AddressComponent,
+        CreateEditDepartmentComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatRadioModule,
+        NgxDaterangepickerMd.forRoot({
+            separator: ' - ',
+            applyLabel: 'Okay',
+        })
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

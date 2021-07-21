@@ -3,30 +3,20 @@
     <div class="row">
         <div class="wrap-6 pad-right">
             <div class="form-group row">
-                <label class="wrap-3 col-form-label">Address 1</label>
-                <div class="wrap-9">
-                    <input type="text" formControlName="address1" class="form-control" />
-                    <div
-                        *ngIf="addressForm.controls['address1'].invalid && (addressForm.controls['address1'].dirty || addressForm.controls['address1'].touched)">
-                        <span class="error-span" *ngIf="addressForm.controls['address1'].errors.required">
-                            Address1 is required.
-                        </span>
-                    </div>
-                </div>
+                <mat-form-field class="width-100p" appearance="outline">
+                    <mat-label>Address 1</mat-label>
+                    <input matInput placeholder="Line 1" formControlName="address1">
+                    <mat-error *ngIf="isValidated('address1', 'required')">Please enter address</mat-error>
+                </mat-form-field>
             </div>
         </div>
         <div class="wrap-6 pad-left">
             <div class="form-group row">
-                <label class="wrap-3 col-form-label">State</label>
-                <div class="wrap-9">
-                    <input type="text" formControlName="state" class="form-control" />
-                    <div
-                        *ngIf="addressForm.controls['state'].invalid && (addressForm.controls['state'].dirty || addressForm.controls['state'].touched)">
-                        <span class="error-span" *ngIf="addressForm.controls['state'].errors.required">
-                            State is required.
-                        </span>
-                    </div>
-                </div>
+                <mat-form-field class="width-100p" appearance="outline">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="State" formControlName="state">
+                    <mat-error *ngIf="isValidated('state', 'required')">Please select state</mat-error>
+                </mat-form-field>
             </div>
         </div>
     </div>
@@ -34,24 +24,19 @@
     <div class="row">
         <div class="wrap-6 pad-right">
             <div class="form-group row">
-                <label class="wrap-3 col-form-label">Address 2</label>
-                <div class="wrap-9">
-                    <input type="text" formControlName="address2" class="form-control" />
-                </div>
+                <mat-form-field class="width-100p" appearance="outline">
+                    <mat-label>Address 2</mat-label>
+                    <input matInput placeholder="State" formControlName="address2">
+                </mat-form-field>
             </div>
         </div>
         <div class="wrap-6 pad-left">
             <div class="form-group row">
-                <label class="wrap-3 col-form-label">Postcode</label>
-                <div class="wrap-9">
-                    <input type="text" formControlName="pincode" class="form-control" />
-                    <div
-                        *ngIf="addressForm.controls['pincode'].invalid && (addressForm.controls['pincode'].dirty || addressForm.controls['pincode'].touched)">
-                        <span class="error-span" *ngIf="addressForm.controls['pincode'].errors.required">
-                            Postcode is required.
-                        </span>
-                    </div>
-                </div>
+                <mat-form-field class="width-100p" appearance="outline">
+                    <mat-label>Postcode</mat-label>
+                    <input matInput placeholder="State" formControlName="pincode">
+                    <mat-error *ngIf="isValidated('pincode', 'required')">Please enter postcode</mat-error>
+                </mat-form-field>
             </div>
         </div>
     </div>
@@ -59,33 +44,27 @@
     <div class="row">
         <div class="wrap-6 pad-right">
             <div class="form-group row">
-                <label class="wrap-3 col-form-label">City</label>
-                <div class="wrap-9">
-                    <input type="text" formControlName="city" class="form-control" />
-                    <div
-                        *ngIf="addressForm.controls['city'].invalid && (addressForm.controls['city'].dirty || addressForm.controls['city'].touched)">
-                        <span class="error-span" *ngIf="addressForm.controls['city'].errors.required">
-                            City is required.
-                        </span>
-                    </div>
-                </div>
+                <mat-form-field class="width-100p" appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input matInput placeholder="State" formControlName="city">
+                    <mat-error *ngIf="isValidated('city', 'required')">Please enter city</mat-error>
+                </mat-form-field>
             </div>
         </div>
         <div class="wrap-6 pad-left">
             <div class="form-group row">
-                <label class="wrap-3 col-form-label">Country</label>
-                <div class="wrap-9">
-                    <select formControlName="country" class="form-control">
-                        <option value="">Select Country</option>
-                        <option *ngFor="let country of countryList" [value]="country.key">{{ country.value }}</option>
-                    </select>
-                    <div
-                        *ngIf="addressForm.controls['country'].invalid && (addressForm.controls['country'].dirty || addressForm.controls['country'].touched)">
-                        <span class="error-span" *ngIf="addressForm.controls['country'].errors.required">
-                            Country is required.
-                        </span>
-                    </div>
-                </div>
+                <mat-form-field class="width-100p" appearance="outline">
+                    <mat-label>Country</mat-label>
+                    <mat-select formControlName="country">
+                        <mat-option [value]="">
+                            Select Country
+                        </mat-option>
+                        <mat-option *ngFor="let country of countryList" [value]="country.key">
+                            {{ country.value }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="isValidated('country', 'required')">Please select country</mat-error>
+                </mat-form-field>
             </div>
         </div>
     </div>
