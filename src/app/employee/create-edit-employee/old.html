@@ -1,0 +1,241 @@
+<div class="row">
+    <div class="wrap-3">
+        <div class="border">
+            <a [ngClass]="openSection == 'personal' ? 'active' : ''" (click)="onTabClick('personal', $event)">Personal
+                Information</a>
+            <a [ngClass]="openSection == 'contact' ? 'active' : ''" class="contact-section-tab"
+                (click)="onTabClick('contact', $event)">Contact Details</a>
+            <a [ngClass]="openSection == 'address' ? 'active' : ''" class="address-section-tab"
+                (click)="onTabClick('address', $event)">Address</a>
+        </div>
+    </div>
+    <div class="wrap-9">
+
+        <form class="form-employee" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+            <div class="section" [ngClass]="openSection == 'personal' ? 'active' : ''">
+
+                <!-- <p class="card-description"> Personal Info</p> -->
+
+                <div class="row">
+
+                    <div class="wrap-6 pad-right">
+                        <div class="form-group row">
+                            <mat-form-field class="width-100p" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input matInput placeholder="Placeholder">
+                            </mat-form-field>
+                            <!--<label class="wrap-3 col-form-label">First Name</label>
+                            <div class="wrap-9">
+                                <input type="text" formControlName="fname" class="form-control" />
+                                <div
+                                    *ngIf="form.controls['fname'].invalid && (form.controls['fname'].dirty || form.controls['fname'].touched)">
+                                    <span class="error-span" *ngIf="form.controls['fname'].errors.required">
+                                        First name is required.
+                                    </span>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="wrap-6 pad-left">
+                        <div class="form-group row">
+                            <mat-form-field class="width-100p" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input matInput placeholder="Placeholder">
+                            </mat-form-field>
+                            <!-- <label class="wrap-3 col-form-label">Middle Name</label>
+                            <div class="wrap-9">
+                                <input type="text" formControlName="mname" class="form-control" />
+                            </div>-->
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="wrap-6 pad-right">
+
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Last Name</label>
+                            <div class="wrap-9">
+                                <input type="text" formControlName="lname" class="form-control" />
+                                <div
+                                    *ngIf="form.controls['lname'].invalid && (form.controls['lname'].dirty || form.controls['lname'].touched)">
+                                    <span class="error-span" *ngIf="form.controls['lname'].errors.required">
+                                        Last Name is required.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrap-6 pad-left">
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Gender</label>
+                            <div class="wrap-9">
+                                <select formControlName="gender" class="form-control">
+                                    <option value="" selected>Select Gender</option>
+                                    <option *ngFor="let gender of genderList" value="{{ gender }}">{{ gender }}</option>
+                                </select>
+                                <div
+                                    *ngIf="form.controls['gender'].invalid && (form.controls['gender'].dirty || form.controls['gender'].touched)">
+                                    <span class="error-span" *ngIf="form.controls['gender'].errors.required">
+                                        Gender is required.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="wrap-6 pad-right">
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Date of Birth</label>
+                            <div class="wrap-9">
+                                <input type="text" class="form-control" formControlName="dob" placeholder="dd/mm/yyyy"
+                                    ngxDaterangepickerMd [showCancel]="true" [singleDatePicker]="true" />
+                                <div
+                                    *ngIf="form.controls['dob'].invalid && (form.controls['dob'].dirty || form.controls['dob'].touched)">
+                                    <span class="error-span" *ngIf="form.controls['dob'].errors.required">
+                                        Date of Birth is required.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrap-6 pad-left">
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Profile</label>
+                            <div class="wrap-9">
+                                <select formControlName="profile" class="form-control">
+                                    <option value="" selected>Select Profile</option>
+                                    <option *ngFor="let profile of profileList" [value]="profile.key">{{ profile.value
+                                        }}</option>
+                                </select>
+                                <div
+                                    *ngIf="form.controls['profile'].invalid && (form.controls['profile'].dirty || form.controls['profile'].touched)">
+                                    <span class="error-span" *ngIf="form.controls['profile'].errors.required">
+                                        Profile is required.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="wrap-6 pad-right">
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Employment Type</label>
+                            <div class="wrap-4" *ngFor="let employmentType of employmentTypeList">
+                                <div class="form-radio">
+                                    <label class="form-check-label">
+                                        <input formControlName="employmentType" type="radio" class="form-check-input"
+                                            [value]="employmentType.key">{{ employmentType.value }}
+                                    </label>
+                                    <div
+                                        *ngIf="form.controls['employmentType'].invalid && (form.controls['employmentType'].dirty || form.controls['employmentType'].touched)">
+                                        <span class="error-span"
+                                            *ngIf="form.controls['employmentType'].errors.required">
+                                            Emploment type is required.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section" [ngClass]="openSection == 'contact' ? 'active' : ''">
+                <!-- <p class="card-description">Contact Details</p> -->
+
+                <div class="row">
+
+                    <div class="wrap-6 pad-right">
+
+                        <mat-form-field>
+
+                            <mat-label>Name</mat-label>
+
+                            <input matInput placeholder="Ex. Hardik" value="Hardik">
+
+                        </mat-form-field>
+
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Primary Contact</label>
+                            <div class="wrap-9">
+                                <input type="text" formControlName="primaryMobileNo" class="form-control" />
+                                <div
+                                    *ngIf="form.controls['primaryMobileNo'].invalid && (form.controls['primaryMobileNo'].dirty || form.controls['primaryMobileNo'].touched)">
+                                    <span class="error-span" *ngIf="form.controls['primaryMobileNo'].errors.required">
+                                        Primary mobile no. is required.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrap-6 pad-left">
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Personal Email</label>
+                            <div class="wrap-9">
+                                <input type="text" formControlName="personalEmail" class="form-control" />
+                                <div
+                                    *ngIf="form.controls['personalEmail'].invalid && (form.controls['personalEmail'].dirty || form.controls['personalEmail'].touched)">
+                                    <span class="error-span" *ngIf="form.controls['personalEmail'].errors.required">
+                                        Personal Email Address is required.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="wrap-6 pad-right">
+
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Secondary Contact</label>
+                            <div class="wrap-9">
+                                <input type="text" formControlName="secondaryMobileNo" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrap-6 pad-left">
+                        <div class="form-group row">
+                            <label class="wrap-3 col-form-label">Official Email</label>
+                            <div class="wrap-9">
+                                <input type="text" formControlName="secondaryEmail" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section" [ngClass]="openSection == 'address' ? 'active' : ''">
+                <!-- <p class="card-description"> Address </p> -->
+
+                <app-address formControlName="address"></app-address>
+            </div>
+
+            <div>
+                <button type="submit" [disabled]="form.pristine || form.invalid"
+                    class="btn btn-primary mr-2">Submit</button>
+                <button type="button" (click)="form.reset()" class="btn btn-default">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

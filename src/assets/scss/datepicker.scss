@@ -1,0 +1,53 @@
+.md-drppicker .btn {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+}
+.md-drppicker .btn:hover {
+    background-color: #0062cc !important;
+    border-color: #005cbf !important;
+}
+.md-drppicker {
+    .btn {
+        line-height: normal !important;
+        font-weight: 400;
+        padding: 10px 15px !important;
+        border-radius: 2px !important;
+        font-size: 14px !important;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+            box-shadow 0.15s ease-in-out;
+        box-shadow: none !important;
+        text-transform: capitalize !important;
+    }
+    .btn.btn-default {
+        background-color: transparent !important;
+        border-color: #ccc !important;
+        margin-right: 10px;
+        color: #2b2b2b !important;
+        border: 1px solid #ccc;
+    }
+    .btn.btn-default:hover {
+        color: #2b2b2b !important;
+        background-color: #e9ecef !important;
+    }
+    td.start-date.end-date,
+    td.active {
+        border-radius: 50% !important;
+        background-color: #007bff;
+        border-color: transparent;
+        color: #fff;
+        span {
+            vertical-align: sub;
+        }
+    }
+    td.active:hover {
+        background-color: #0062cc !important;
+    }
+    .week-days th, .table-condensed thead tr th {
+        font-size: 13px;
+        font-weight: 500;
+        color: #2b2b2b;
+    }
+}

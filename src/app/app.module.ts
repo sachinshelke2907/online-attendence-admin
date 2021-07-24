@@ -11,9 +11,11 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddressComponent } from './components/form/address/address.component';
 import { CreateEditDepartmentComponent } from './department/create-edit-department/create-edit-department.component';
-import { APP_BASE_HREF } from '@angular/common';
-import { DepartmentListComponent } from './department/department-list/department-list.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
     declarations: [
@@ -23,17 +25,23 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         CreateEditEmployeeComponent,
         EmployeeListComponent,
         AddressComponent,
-        CreateEditDepartmentComponent,
-        DepartmentListComponent,
-        DashboardComponent
+        CreateEditDepartmentComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatRadioModule,
+        NgxDaterangepickerMd.forRoot({
+            separator: ' - ',
+            applyLabel: 'Okay',
+        })
     ],
-    providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

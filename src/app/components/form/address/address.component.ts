@@ -70,4 +70,8 @@ export class AddressComponent implements OnInit, ControlValueAccessor, Validator
         return this.addressForm.valid ? null : { invalidForm: { valid: false, message: "basicInfoForm fields are invalid" } };
     }
 
+    public isValidated = (controlName: string, errorType: string) => {
+        return this.addressForm.controls[controlName].hasError(errorType);
+    }
+
 }
