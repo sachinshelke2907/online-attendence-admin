@@ -292,11 +292,12 @@ body {
     min-width: 0;
     box-shadow: 0 0 0 0 rgb(90 113 208 / 11%), 0 4px 16px 0 rgb(167 175 183 / 33%);
     border: solid 1px #dde4eb;
-    border-radius: 0px;
+    border-radius: 4px;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
     padding: 20px;
+    border-top: 2px solid #007bff;
 }
 .card-title {
     font-weight: 500;
@@ -353,21 +354,20 @@ select.form-control {
 .mr-5 {
     margin-right: 5px !important;
 }
-.btn-success {
-    background-color: #19d895;
-    border-color: #19d895;
-}
-.btn {
-    font-weight: 400;
-    padding: 5px 15px 5px 15px;
-    border-radius: 2px;
-    font-size: 14px !important;
-    text-align: center;
-    vertical-align: middle;
-    display: inline-block;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-        box-shadow 0.15s ease-in-out;
-}
+// .btn-success {
+//     background-color: #17a2b8;
+//     border-color: #17a2b8;
+// }
+// .btn {
+//     font-weight: 400;
+//     padding: 5px 15px 5px 15px;
+//     border-radius: 2px;
+//     font-size: 14px !important;
+//     text-align: center;
+//     vertical-align: middle;
+//     display: inline-block;
+//     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+// }
 .btn-light:not(:disabled):not(.disabled):active,
 .btn-light:not(:disabled):not(.disabled).active,
 .show > .btn-light.dropdown-toggle {
@@ -375,13 +375,9 @@ select.form-control {
     background-color: #e2e2e2;
     border-color: #dbdbdb;
 }
-.btn.btn-danger,
-.btn.btn-info,
-.btn.btn-success,
-.btn.btn-teal,
-.btn.btn-warning {
-    color: #ffffff;
-}
+// .btn.btn-danger, .btn.btn-info, .btn.btn-success, .btn.btn-teal, .btn.btn-warning {
+//     color: #ffffff;
+// }
 .error-span {
     color: #ff0000;
     font-size: 11px !important;
@@ -449,5 +445,13 @@ select.form-control {
 }
 
 @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+
 @import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
-@import "assets/scss/ag-grid.scss"
+
+@import "assets/scss/ag-grid.scss";
+
+@import "assets/scss/datepicker.scss";
+
+@import "assets/scss/button.scss";
+
+@import "assets/scss/angular-material.scss";

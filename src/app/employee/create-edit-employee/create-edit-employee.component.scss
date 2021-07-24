@@ -1,0 +1,32 @@
+.border {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    a {
+        border-right: 1px #ccc solid;
+        padding: 10px;
+        cursor: pointer;
+        color: #2b2b2b;
+    }
+    a.active, a:active {
+        border-right: none;
+        border-top: 1px #ccc solid;
+        border-left: 1px #ccc solid;
+        border-bottom: 1px #ccc solid;
+        color: #007bff;
+    }
+    a:hover {
+        background-color: #f2f2f299;
+    }
+    a.active:hover {
+        background-color:transparent;
+    }
+}
+.form-employee {
+    .section {
+        display: none;
+    }
+    .active {
+        display: block !important;
+    }
+}
