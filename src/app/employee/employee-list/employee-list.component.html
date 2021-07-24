@@ -1,4 +1,4 @@
-<table class="table">
+<!-- <table class="table">
     <thead>
         <th>
             #
@@ -43,4 +43,8 @@
             </td>
         </tr>
     </tbody>
-</table>
+</table> -->
+<div>
+    <ag-grid-angular style="height: 520px;" class="ag-theme-alpine" [pagination]="true" [paginationPageSize]="paginationSize" [rowData]="employeeList" [columnDefs]="columnDefs">
+    </ag-grid-angular>
+</div>

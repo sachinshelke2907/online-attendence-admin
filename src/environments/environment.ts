@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   appShortName: 'OA',
-  appName: 'Online Attendance'
+  appName: 'Online Attendance',
+  baseUrl: 'test',
+  paginationSize: 10
 };
 
 /*

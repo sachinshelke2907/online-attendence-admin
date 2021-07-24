@@ -1,0 +1,25 @@
+.ag-body-horizontal-scroll {
+    height: 0px !important;
+    min-height: 0px !important;
+    max-height: 0px !important;
+    .ag-body-horizontal-scroll-viewport {
+        height: 0px !important;
+        min-height: 0px !important;
+        max-height: 0px !important;
+    }
+}
+.ag-theme-alpine {
+    .ag-root-wrapper {
+        border: transparent;
+        border-color: transparent;
+    }
+    .ag-row-even {
+        background-color: #ededed;
+    }  
+    .ag-header {
+        background-color: transparent;
+    } 
+    .ag-menu {
+        border-radius: 0;
+    }
+}

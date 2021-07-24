@@ -14,6 +14,7 @@ import { CreateEditDepartmentComponent } from './department/create-edit-departme
 import { APP_BASE_HREF } from '@angular/common';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AgGridModule.withComponents([])
     ],
     providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
     bootstrap: [AppComponent]
