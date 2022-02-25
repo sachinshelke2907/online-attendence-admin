@@ -1,5 +1,6 @@
 import { Component, forwardRef, OnInit } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, FormBuilder, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, Validators } from '@angular/forms';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
     selector: 'app-address',
@@ -25,10 +26,16 @@ export class AddressComponent implements OnInit, ControlValueAccessor, Validator
         { key: 'IN', value: 'India' },
     ];
 
-    constructor(private formBuilder: FormBuilder) { }
+    stateList: any = [
+        { key: 'MH', value: 'Maharashtra' },
+    ];
+
+    constructor(private formBuilder: FormBuilder, private rest: RestService) { }
 
     ngOnInit(): void {
 
+        this.setCountry();
+        
         this.addressForm = this.formBuilder.group({
             address1: ['', [Validators.required,
             Validators.minLength(5)
@@ -72,6 +79,10 @@ export class AddressComponent implements OnInit, ControlValueAccessor, Validator
 
     public isValidated = (controlName: string, errorType: string) => {
         return this.addressForm.controls[controlName].hasError(errorType);
+    }
+
+    setCountry(): void {
+        this.rest.fetchAll('/ref/country');
     }
 
 }

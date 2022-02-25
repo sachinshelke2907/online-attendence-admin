@@ -6,8 +6,12 @@ export const environment = {
   production: false,
   appShortName: 'OA',
   appName: 'Online Attendance',
-  baseUrl: 'test',
-  paginationSize: 10
+  base1Url: 'http://localhost:8080/',
+  API_BASE_URL: 'http://localhost:8080',
+  paginationSize: 10,
+  EMPLOYEE: {
+    LIST: 'employee'
+  }
 };
 
 /*

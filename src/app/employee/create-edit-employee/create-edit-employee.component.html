@@ -85,12 +85,12 @@
                         <div class="form-group row">
                             <mat-form-field class="width-100p" appearance="outline">
                                 <mat-label>Profile</mat-label>
-                                <mat-select formControlName="profile">
+                                <mat-select formControlName="profileId">
                                     <mat-option *ngFor="let profile of profileList" [value]="profile.key">
                                         {{ profile.value }}
                                     </mat-option>
                                 </mat-select>
-                                <mat-error *ngIf="isValidated('profile', 'required')">Please select profile</mat-error>
+                                <mat-error *ngIf="isValidated('profileId', 'required')">Please select profile</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
@@ -130,8 +130,8 @@
                         <div class="form-group row">
                             <mat-form-field class="width-100p" appearance="outline">
                                 <mat-label>Personal Email</mat-label>
-                                <input matInput placeholder="Email" formControlName="personalEmail">
-                                <mat-error *ngIf="isValidated('personalEmail', 'required')">Please enter personal email</mat-error>
+                                <input matInput placeholder="Email" formControlName="pemail">
+                                <mat-error *ngIf="isValidated('pemail', 'required')">Please enter personal email</mat-error>
                             </mat-form-field>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                         <div class="form-group row">
                             <mat-form-field class="width-100p" appearance="outline">
                                 <mat-label>Official Email</mat-label>
-                                <input matInput placeholder="Email" formControlName="secondaryEmail">
+                                <input matInput placeholder="Email" formControlName="oemail">
                             </mat-form-field>
                         </div>
                     </div>

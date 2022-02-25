@@ -62,3 +62,6 @@ input.mat-input-element {
 .mat-form-field-appearance-outline .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-end {
     border: 1px solid #ccc;
 }
+.mat-select-panel {
+    border-radius: 0 !important;
+}

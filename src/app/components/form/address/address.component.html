@@ -14,9 +14,23 @@
             <div class="form-group row">
                 <mat-form-field class="width-100p" appearance="outline">
                     <mat-label>State</mat-label>
-                    <input matInput placeholder="State" formControlName="state">
+                    <mat-select formControlName="state">
+                        <mat-option [value]="">
+                            Select State
+                        </mat-option>
+                        <mat-option *ngFor="let state of stateList" [value]="state.key">
+                            {{ state.value }}
+                        </mat-option>
+                    </mat-select>
                     <mat-error *ngIf="isValidated('state', 'required')">Please select state</mat-error>
                 </mat-form-field>
+
+                <!-- <mat-form-field class="width-100p" appearance="outline">
+                    <mat-label>State</mat-label>
+                    <input matInput placeholder="State" formControlName="state">
+                    <mat-error *ngIf="isValidated('state', 'required')">Please select state</mat-error>
+                </mat-form-field> -->
+
             </div>
         </div>
     </div>

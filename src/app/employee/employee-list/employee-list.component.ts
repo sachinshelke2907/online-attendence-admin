@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { environment } from 'src/environments/environment';
 import { headerList, employeeList1 } from '../employee.mock';
 // import { employeeList } from './employee-list.component.mock';
@@ -10,54 +11,39 @@ import { headerList, employeeList1 } from '../employee.mock';
 })
 export class EmployeeListComponent implements OnInit {
 
-    @Output() moduleName: string = "Employee List";
+    @Output()
+    moduleName: string = "Employee List";
 
     paginationSize: number;
 
     employeeList: any = [];
 
-    constructor() { }
+    constructor(private empService: EmployeeService) { }
 
-    // columnDefs = [
-    //     { field: 'make' },
-    //     { field: 'model' },
-    //     { field: 'price'}
-    // ];
     columnDefs = headerList;
-
-    // rowData = [
-    //     { make: 'Toyota', model: 'Celica', price: 35000 },
-    //     { make: 'Ford', model: 'Mondeo', price: 32000 },
-    //     { make: 'Porsche', model: 'Boxter', price: 72000 }
-    // ];
-
     ngOnInit(): void {
         this.paginationSize = environment.paginationSize;
         this.onLoad();
     }
 
     onLoad(): void {
-        let emp: any;
-        let index = 0;
-        for(let employee of employeeList1) {
-            console.log(employee);
-            emp = {
-                '#': (index + 1),
-                'Name': this.getFullName(employee),
-                'Designation': employee.designation,
-                'Personal Email': employee.pemail,
-                'Official Email': employee.oemail,
-                'Mobile No': employee.primaryNo,
-                'Action': employee.action,
-            }
-            console.log(emp);
-            this.employeeList.push(emp);
-        }
 
-        // this.employeeList = employeeList;
+        let index = 0;
+        const empList = this.empService.getEmployeeList();
+        for (let empInfo of empList) {
+            this.employeeList.push({
+                '#': (index + 1),
+                'Name': this.getFullName(empInfo),
+                'Designation': '--',
+                'Personal Email': empInfo.pemail,
+                'Official Email': empInfo.oemail,
+                'Mobile No': empInfo.fname,
+                'Action': empInfo.fname,
+            });
+        }
     }
 
-    public getFullName(employee: any): string {
+    private getFullName(employee: any): string {
         let fullName = '';
         fullName = employee.fname;
         fullName = fullName + ' ' + employee.mname;
